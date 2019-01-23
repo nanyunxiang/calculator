@@ -1,6 +1,6 @@
 package wk.cal.module.view.component;
 
-import wk.cal.module.listener.BtnListenter;
+import wk.cal.module.listener.OperationalBtnListenter;
 import wk.cal.module.view.in.BaseView;
 
 import javax.swing.*;
@@ -14,7 +14,6 @@ import java.awt.event.ActionListener;
  * Description: 操作视图
  */
 public class OperationalView extends BaseView {
-
     private final String[][] btns = {
             {"7", "8", "9", "/"},
             {"4", "5", "6", "*"},
@@ -24,29 +23,20 @@ public class OperationalView extends BaseView {
 
     private static final Font font = new Font("黑体", Font.BOLD, 18);
 
-    private  BtnListenter btnListenter;
+    private OperationalBtnListenter operationalBtnListenter;
 
     public OperationalView() {
         GridLayout gridLayout = new GridLayout(4, 4);
-        this.btnListenter = new BtnListenter();
+        this.operationalBtnListenter = new OperationalBtnListenter();
         this.addBtn();
+        this.setPreferredSize(new Dimension(viwConfig.getWidth() - 10, viwConfig.getHeight() / 2 + 30));
         this.setLayout(gridLayout);
-    }
-
-    /**
-     * 获取容器位置
-     *
-     * @return
-     */
-    @Override
-    public String getPosition() {
-        return BorderLayout.CENTER;
     }
 
     private void addBtn() {
         for (int i = 0; i < btns.length; i++) {
             for (int j = 0; j < btns[i].length; j++) {
-                this.add(this.createBtn(btns[i][j], btnListenter));
+                this.add(this.createBtn(btns[i][j], operationalBtnListenter));
             }
         }
     }

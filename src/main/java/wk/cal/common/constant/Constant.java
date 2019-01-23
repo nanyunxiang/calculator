@@ -12,5 +12,5 @@ public class Constant {
     public static final boolean ALWAYS_ON_TOP = true;
     public static final boolean RESIZABLE = false;
 
-    public static final String OPERATION_SYMBOL = "+-*/.";
+    public static final String OPERATION_SYMBOL = "+-*/.=";
 }

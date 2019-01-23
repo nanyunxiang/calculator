@@ -1,5 +1,7 @@
 package wk.cal.module.view.in;
 
+import wk.cal.common.config.ViewConfig;
+
 import javax.swing.*;
 
 /**
@@ -10,11 +12,6 @@ import javax.swing.*;
  */
 public abstract class BaseView extends JPanel {
 
-    /**
-     * 获取容器位置
-     *
-     * @return
-     */
-    public abstract String getPosition();
+    protected static final ViewConfig viwConfig = ViewConfig.getInstance();
 
 }
