@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class History {
 
-    private static History history;
+    private volatile static History history;
 
     private List<HistoryEntity> historyEntityList;
 

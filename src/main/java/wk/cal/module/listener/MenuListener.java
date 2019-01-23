@@ -2,6 +2,7 @@ package wk.cal.module.listener;
 
 import wk.cal.module.model.History;
 import wk.cal.module.model.HistoryEntity;
+import wk.cal.module.view.component.HistoryDialog;
 
 import javax.swing.*;
 import javax.swing.event.MenuEvent;
@@ -14,9 +15,10 @@ import java.util.logging.Logger;
  * Date:2019/01/22  下午 04:02
  * Description:
  */
-public class MenuListener implements javax.swing.event.MenuListener{
+public class MenuListener implements javax.swing.event.MenuListener {
 
     private static Logger logger = Logger.getLogger(MenuListener.class.getName());
+
     /**
      * Invoked when a menu is selected.
      *
@@ -27,9 +29,10 @@ public class MenuListener implements javax.swing.event.MenuListener{
         logger.info("e");
         JMenu source = (JMenu) e.getSource();
         logger.info(source.getText());
-        if (source.getName().equals("history")){
+        if (source.getName().equals("history")) {
             List<HistoryEntity> historyEntityList = History.getInstance().getHistoryEntityList();
             System.out.println(historyEntityList);
+            HistoryDialog.display();
         }
     }
 

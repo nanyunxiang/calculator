@@ -12,7 +12,7 @@ import javax.script.ScriptException;
  */
 public final class Depot {
 
-    private static Depot depot;
+    private volatile static Depot depot;
 
     private static final ScriptEngine js = new ScriptEngineManager().getEngineByName("JavaScript");
 

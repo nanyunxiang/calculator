@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class CalBuilder {
 
-    private static CalBuilder calBuilder;
+    private volatile static CalBuilder calBuilder;
 
     private static MainView mainView; // 主容器
 
@@ -117,4 +117,12 @@ public class CalBuilder {
         return null;
     }
 
+    /**
+     * 获取显示器屏幕
+     *
+     * @return
+     */
+    public JFrame getMainView() {
+        return mainView;
+    }
 }

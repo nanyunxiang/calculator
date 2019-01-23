@@ -42,8 +42,6 @@ public class HistoryEntity {
 
     @Override
     public String toString() {
-        return "HistoryEntity{"+ formula + '\'' +
-                "=" + result + ", date=" + date +
-                '}';
+        return "> " + formula + "=" + result + ", date=" + date;
     }
 }
